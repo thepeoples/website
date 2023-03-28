@@ -23,24 +23,33 @@ An "infrastructure instance" represents one Kubernetes cluster meeting the **Min
 The software consuming the infrastructure in order to provide end-users with desired services.
 
 A "platform instance" is a collection of one or more infrastructure instances that the platform manages to provide high-availability and data privacy.
-An example of a platform instance would be `thepeoples.io`.
+An example of a platform instance is `thepeoples.io`.
+
+A "platform instance provider" is an entity that provides platform instances as a service.
+One goal of this solution is to secure data at the platform instance (i.e. application) level instead of delegating that task to the underlying infrastructure.
+This ensures that data cannot be altered, indexed, read, or otherwise scanned without the consent of the owner.
 
 ## Core Principals
 
+Where practical (and possible), the following guiding principles should be followed: 
+
 * Data privacy is just as important as the free flow of information provided by the Internet
 * Security is a design consideration from the start but should not overly disrupt the user experience
-* Build for high-availability and horizontal scalability, even if the infrastructure instance contains only a single host 
+* Smaller, more decentralized circles of trust should be preferred over larger, one-size-fits-all solutions
+* Build for high-availability and horizontal scalability, even if the platform instance contains only a single infrastructure host 
 * Privacy-ensuring (i.e. client-side) data encryption and residency options should come standard
-* Decentralize the web and allow users to take control of a valuable asset: their data
-* Allow connections between platform instances without an authoritative third-party
-* Families and communities should be able to self-host the same platform that powers `thepeoples.io` instance
+* Allow secure, transparent connections between platform instances without needing to trust their infrastructure 
+* Families and communities should be able to self-host the same platform that powers `thepeoples.io`
 * Connect communities together while maintaining encryption, privacy, and ownership of managed data
-* Users of various experience levels should find the experience fairly intuitive
-* Component implementations should be small, modular, and pluggable where practical
+* Users of various technical backgrounds should find the experience intuitive
+* Users should require only limited trust in their chosen platform instance providers, and may safely choose to switch providers later
+* Simplicity and smaller attack-surfaces should be preferred over larger, more complicated components  
+* Component implementations should be small, modular, and pluggable/swappable
+* Use industry best-practices, such as GitOps and least-privileged access models
 
 ### Bottom Line
 
-Be self-sovereign with your data that **you** own, whether hosting it yourself or using a third party host.
+Secure your data, whether hosting it yourself or using a third party platform instance provider
 This project hopes to decentralize web services through federation of distributed instances of the current reference architecture called:
 **The Peoples' Infrastructure and Services Platform**
 
@@ -154,4 +163,6 @@ This phase will focus on reducing the third party risk associated with platform 
 
 ## Contributing
 
-More to come, but if interested in helping, please reach out!
+See [the building docs](./BUILDING.md) for how to build and test this container locally.
+Issues and PRs are open for asking questions or sharing ideas and proposals.
+The goal is for this to become a community-owned solution that uses GitOps patterns where ever practical, including for project and solution governance.
