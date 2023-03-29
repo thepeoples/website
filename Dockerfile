@@ -14,13 +14,12 @@ RUN deno install \
     --no-prompt \
     --reload \
     main.ts \
-RUN rm -f deno.lock
+RUN deno cache --lock-write main.ts
 
 # Start the release build step, which copies compiled assets from the previous step to a new base image
 FROM $BASE_IMAGE:$BASE_IMAGE_TAG AS release
 COPY --from=compile /usr/bin/deno /usr/bin/deno
 COPY --from=compile /app /app
 WORKDIR /app
-RUN deno cache main.ts
 EXPOSE 8000
 CMD ["/usr/bin/deno", "run", "--allow-env", "--allow-net", "--allow-read", "--allow-run", "--allow-write", "--no-prompt", "main.ts"]
