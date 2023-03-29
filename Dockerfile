@@ -9,7 +9,7 @@ ARG DENO_IMAGE_TAG=$DENO_VERSION
 FROM $DENO_IMAGE:$DENO_IMAGE_TAG AS compile
 WORKDIR /app
 COPY . .
-RUN deno cache main.ts
+RUN deno cache --reload main.ts
 CMD ["/usr/bin/deno", "run", "--allow-env", "--allow-net", "--allow-read", "--allow-run", "--allow-write", "--no-prompt", "main.ts"]
 EXPOSE 8000
 

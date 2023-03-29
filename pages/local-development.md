@@ -45,3 +45,11 @@ deno task start
 
 For IntelliJ IDEs using the Deno plugin, the run configuration "Deno Fresh" should already be configured for debugging.
 For other IDEs, a task to use either run method above can be created.
+
+## Committing
+
+Be sure to run this command before committing, or builds may fail:
+
+```shell
+deno cache --reload main.ts
+```
