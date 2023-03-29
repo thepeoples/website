@@ -1,5 +1,7 @@
 <img src="/logo.svg" width="128px" height="128px" />
 
+[![Docker](https://github.com/thepeoples/website/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/thepeoples/website/actions/workflows/docker-publish.yml)
+
 ## Introduction
 
 This is the official documentation for the platform instance used to host services provided by `thepeoples.io` domain.
