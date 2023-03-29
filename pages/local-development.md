@@ -51,5 +51,6 @@ For other IDEs, a task to use either run method above can be created.
 Be sure to run this command before committing, or builds may fail:
 
 ```shell
+rm deno.lock
 deno cache --reload main.ts
 ```
