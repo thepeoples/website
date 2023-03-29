@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Deno Fresh" type="DenoConfigurationType" exePath="$USER_HOME$/.deno/bin/deno" inputPath="$PROJECT_DIR$/main.ts" programParameters="task start">
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
