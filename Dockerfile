@@ -13,7 +13,8 @@ RUN deno install \
     --allow-all \
     --no-prompt \
     --reload \
-    main.ts
+    main.ts && \
+    deno cache main.ts
 
 # Start the release build step, which copies compiled assets from the previous step to a new base image
 FROM $BASE_IMAGE:$BASE_IMAGE_TAG AS release
