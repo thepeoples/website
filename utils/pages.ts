@@ -33,5 +33,5 @@ export async function getPage(name: string = README): Promise<Page> {
     return page;
 }
 
-export const PAGE_CSS = CSS;
+export const PAGE_CSS = CSS + "\nol,ul{list-style:disc}";
 
