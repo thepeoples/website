@@ -1,5 +1,7 @@
 <img src="/logo.svg" width="128px" height="128px" />
 
+<br />
+
 [![Docker](https://github.com/thepeoples/website/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/thepeoples/website/actions/workflows/docker-publish.yml)
 
 ## Introduction
@@ -62,9 +64,10 @@ architecture called:
 
 ## Status
 
-### 🚧 Under Construction: Phase 1
+### 🚧 Under Construction: Phase 2
 
-The implementation of Phase 1 is nearly complete!
+The proof-of-concept implementation of Phase 1 is complete with the publishing of the website at `thepeoples.io`.
+Work has started on Phase 2.
 
 #### Phase 1 - Infrastructure
 
@@ -91,7 +94,9 @@ This phase should also consider the future multi-region use-cases.
 Initially, persistent storage will remain limited to KV-like (NoSQL) databases for all platform services.
 
 * `storage-s3-api`: Low-level S3 storage abstraction API to enforce data privacy using client-side encryption
-* `storage-kv-api`: KV storage API built on `storage-s3-api`, with indexing and querying capabilities
+* `storage-kv-api`: KV storage API built on `storage-s3-api`, with basic value writing with indexing and querying
+  capabilities
+* `storage-gql-api`: GraphQL API built on `storage-kv-api` with querying and mutating capabilities
 
 ##### Persistent Storage API Design Goals
 
@@ -191,6 +196,9 @@ Issues and PRs are open for asking questions or sharing ideas and proposals.
 The goal is for this to become a community-owned solution that uses GitOps patterns where ever practical, including for
 project and solution governance.
 
+To be successful, this needs to be community solution with several contributors.
+We need help with coding, design, documentation, graphics (branding), but any help is appreciated.
+
 ## Source Code
 
 The source code for the platform is open source. Please visit our source repository for more information:
@@ -200,3 +208,4 @@ https://github.com/thepeoples/website
 ## Branding
 
 Current branding is based on an [idea from ChatGPT](./ai-branding-idea).
+There is no marketing team, so if you'd like to help us with our branding, please open an Issue.

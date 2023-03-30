@@ -11,17 +11,6 @@ const LOCALHOST = "localhost:8000";
 // App entrypoint
 export const handler: Handlers<Page> = {
     async GET(_req, ctx) {
-        // // redirect HTTP requests to HTTPS
-        // if (_req.url.startsWith(HTTP_PREFIX + LOCALHOST)) {
-        //     console.log('Skipping redirect to HTTP since running locally');
-        // } else if (_req.url.startsWith(HTTP_PREFIX)) {
-        //     const uri = _req.url.slice(HTTP_PREFIX.length);
-        //     return new Response(undefined, {
-        //         status: 301,
-        //         headers: {location: `${HTTPS_PREFIX}${uri}`}
-        //     });
-        // }
-
         // render desired page
         const page = await getPage(ctx.params.name);
         return ctx.render(page);
